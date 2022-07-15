@@ -16,7 +16,8 @@ source $ZSH/oh-my-zsh.sh
 #------------------------------------------------
 #    ZPLUG
 #------------------------------------------------
-source ~/.zplug/init.zsh
+export ZPLUG_HOME=/home/linuxbrew/.linuxbrew/opt/zplug
+source $ZPLUG_HOME/init.zsh
 
 # Let zplug manage itself
 zplug 'zplug/zplug', hook-build: 'zplug --self-manage'
@@ -121,14 +122,26 @@ fix_vim() {
 #==============================================================================
 #  Aliases 
 #==============================================================================
+alias cl='clear'
+
 # Use dotfiles command to manage the dotfiles repo
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
-alias ll='ls --color=auto -lhF'
+
 alias bcl='bc -l'
 alias grin='grep -rin'
-alias g-='git log --graph --color --oneline --decorate'
-alias gdo='git diff origin/$(git rev-parse --abbrev-ref HEAD)'
+
+# git Aliases
+alias gadd='git add'
+alias gcom='git commit'
+# alias gdo='git diff origin/$(git rev-parse --abbrev-ref HEAD)'
+alias glog'git log --graph --color --oneline --decorate'
+alias gpull='git pull'
+alias gpush='git push'
+alias gstat='git status'
+
+# ls Aliases
+alias ll='ls --color=auto -lhF'
 
 #==============================================================================
 #  Custom .zshrc

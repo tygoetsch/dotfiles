@@ -6,7 +6,7 @@ export VISUAL=vim
 export EDITOR="$VISUAL"
 
 # Remove user@host for local machine
-export DEFAULT_USER=david
+export DEFAULT_USER=$USER
 
 #==============================================================================
 #  Custom environment
