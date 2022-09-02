@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 #==============================================================================
 #  Bootstrap
 #==============================================================================
@@ -119,6 +126,13 @@ fix_vim() {
     exec zsh
 }
 
+# Useful example of using sed in a for loop to alter file names
+# rename() {
+# 	echo 'for i in *; do'
+# 	echo 	'mv "$i" "`echo $i | sed "s/\(\w*\).old/\1/"`";'
+# 	echo 'done'
+# }
+
 #==============================================================================
 #  Aliases 
 #==============================================================================
@@ -152,3 +166,8 @@ SRC="$HOME/.zshrc.$(sed 's/\([a-zA-Z]\)[0-9]$/\1/' <<< $HOST)"
 if [[ -f "${SRC}" ]]; then
     source "${SRC}"
 fi
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+export PATH="/home/linuxbrew/.linuxbrew/sbin:$PATH"
