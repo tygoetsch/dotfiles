@@ -145,7 +145,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'plasticboy/vim-markdown'
 
 " Tab completion
-Plug 'ajh17/VimCompletesMe'
+"ackyshake repo seems to have dissappeared from github
+" Plug 'ajh17/VimCompletesMe' 
 
 " Snippets
 Plug 'SirVer/ultisnips'
@@ -208,7 +209,7 @@ let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
 "    VimCompletesMe
 " ------------------------------
 " Run automatically on all file types
-autocmd FileType vim let b:vcm_tab_complete = 'vim'
+" autocmd FileType vim let b:vcm_tab_complete = 'vim'
 
 " ------------------------------
 "    UltiSnips
