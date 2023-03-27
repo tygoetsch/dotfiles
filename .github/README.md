@@ -1,15 +1,6 @@
 # dotfiles 
 
-## Installation
-
-### Automatic
-
-Run the automatic installation script:
-```sh
-curl -Ls https://gist.github.com/dhnza/6b384f52ce32342761cc00f9d26311fa/raw/dotfiles-install.sh | /bin/bash
-```
-
-### Manual
+## Manual Installation
 
 Clone dotfiles into a bare git repository. The git tracking information will be stored in `~/.dotfiles`.
 ```sh
