@@ -8,3 +8,5 @@ git clone git@github.com:tygoetsch/dotfiles.git
 cd dotfiles
 ./install.sh
 ```
+
+

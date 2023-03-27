@@ -44,3 +44,6 @@ for x in ${dotfiles_array[@]}; do
     fi   
     cp $script_path/.$x ~/.$x
 done
+
+status "Installing Vim plugins"
+vim +PlugInstall
