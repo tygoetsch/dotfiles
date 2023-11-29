@@ -37,12 +37,24 @@ dotfiles_array=("vimrc" "zshrc" "zshenv")
 status "Making backup dotfiles directory in $HOME/"
 mkdir -p ~/.dotfiles-backup
 
-status "Backing up old dotfiles and moving new ones into place in $HOME/"
+status "Backing up old dotfiles"
 for x in ${dotfiles_array[@]}; do
     if [[ -e ~/.$x ]]; then
         cp ~/.$x ~/.dotfiles-backup/
+        status "backup $x ... done"
     fi   
+done
+
+# install oh-my-zsh if it isn't already installed. 
+# Do before moving new dotfiles into place since .zshrc file will be replaced by oh-my-zsh.
+if [[ ! $HOME/.oh-my-zsh ]]; then
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
+
+status "Moving new dotfiles into place in $HOME/"
+for x in #{dotfiles_array[@]}; do
     cp $script_path/.$x ~/.$x
+        status "move $x ... done"
 done
 
 status "Installing Vim plugins"
