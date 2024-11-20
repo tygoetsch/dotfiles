@@ -1,6 +1,7 @@
 #!/bin/bash
 
 DEBUG=1
+LOCATION=${1:-"home"}
 
 # Reset
 Color_Off='\033[0m'       # Text Reset
